@@ -2,8 +2,8 @@
   "compilerOptions": {
    
     "target": "ESNext",                       
-    "module": "ESNext",
-    "declaration": true,
+    "module": "CommonJS",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true, 
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,6 +16,12 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false                                   
-  }
+    "noFallthroughCasesInSwitch": false,   
+    "typeRoots": [
+      "./node_modules/@types", "@types"
+    ]                        
+  },
+  "include": [
+    "src/**/*", "@types"
+  ]
 }
