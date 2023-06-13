@@ -12,6 +12,9 @@ export const formatCEP = (cep: string) => {
   const cepRegex = /^([0-9]{5})([0-9]{3})$/;
 
   if (typeof cep !== "string") throw new Error("Invalid parameter type. The CEP (Postal Code) should be provided as a string.");
+  
+  if(/^[0-9]{5}-[0-9]{3}$/.test(cep)) return cep;
+
   if (!cepRegex.test(cep)) throw new Error("The CEP code must contain 8 numeric digits.");
 
   return cep.replace(cepRegex, "$1-$2");
